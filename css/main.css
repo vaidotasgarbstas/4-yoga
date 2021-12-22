@@ -1,3 +1,11 @@
+:root {
+    --plotis: 1000px;
+    --soninis-atstumas: calc((100% - var(--plotis)) / 2);
+    --tekto-plotis: calc(var(--plotis) * 0.4);
+    --image-plotis: calc(100% - var(--plotis) / 2);
+    --main-plotis: calc(100% - var(--soninis-atstumas));
+    --tarpas: calc(var(--plotis) * 0.02);
+}
 body {
     background-color: #FFFFFF;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -5,9 +13,8 @@ body {
 }
 header {
     display: inline-block;
-    width: 1000px;
-    margin-left: calc((100% - 1000px) / 2);
-
+    width: var(--plotis);
+    margin-left: var(--soninis-atstumas);
 }
 header > img {
     float: left;
@@ -16,13 +23,13 @@ header > img {
 nav {
     float: right;
     margin-top: 20px;
-   
 }
 nav > a {
     line-height: 20px;
     font-size: 18px;
     text-decoration: none;
     margin-left: 20px;
+    border-bottom: 2px solid transparent;
 }
 nav > a:hover {
     border-bottom: 2px solid #FF4622;
@@ -32,23 +39,51 @@ nav > a:first-child {
     border-bottom: 2px solid #FF4622;
 }
 main {
-
+    display: inline-block;
+    width: var(--main-plotis);
+    margin-left: var(--soninis-atstumas);
+    margin-top: 60px;
 }
 div {
-
+    float: left;
+    width: var(--tekto-plotis);
+    margin-right: var(--tarpas);
+    margin-top: 90px;
 }
 h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block;
+    width: 100%;
+    font-size: 40px;
+    margin: 0;
 }
 h1 > span {
     color: #FF4622;
 }
 p {
-
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
 }
 div > a {
-    color: #2A234C;
+    display: inline-block;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #FF4622;
+    border: 1px solid #DE5239;
+    border-radius: 5px;
+    color: #FFF4EE;
+    font-size: 15px;
+    text-decoration: none;
+    margin-top: 30px;
 }
-main > img {
+div > a:hover {
+    color: #FF4622;
+    background-color: #FFF4EE;
 
+}
+
+main > img {
+    float: left;
+    width: var(--image-plotis);
 }
